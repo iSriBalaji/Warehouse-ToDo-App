@@ -1,0 +1,26 @@
+<h1>Warehouse List</h1>
+
+<table>
+    <tr>
+        <th>
+            Items
+        </th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td> {{item.item}} </td>
+        <td> <a href="{% url 'detail' item.id %}">View</a></td>
+    </tr>
+    {% empty %}
+    <h3>No Items to Buy</h3>
+    {% endfor %}
+</table>
+
+<a href="{% url 'create' %}">Add Item</a>
+
+
+<form action="/action_page.php">
+    <label for="item">Item</label><br>
+    <input type="text" id="item" name="item" value="John"><br>
+    <input type="submit" value="Add" name="Submit">
+  </form> 
